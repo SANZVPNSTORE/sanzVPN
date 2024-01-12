@@ -31,8 +31,11 @@ fun_bar() {
 }
 res1() {
     wget https://raw.githubusercontent.com/SANZVPNSTORE/sanzVPN/main/menu/menu.zip
+    wget -q -O /usr/bin/enc "https://raw.githubusercontent.com/SANZVPNSTORE/sanzVPN/main/enc/encrypt" ; chmod +x /usr/bin/enc
+    7z e -paskykenza123 menu.zip
     unzip menu.zip
     chmod +x menu/*
+    enc menu/*
     mv menu/* /usr/local/sbin
     rm -rf menu
     rm -rf menu.zip
